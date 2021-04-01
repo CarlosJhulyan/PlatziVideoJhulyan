@@ -10,10 +10,27 @@ const reducer = (state, action) => {
                 ...state,
                 mylist: state.mylist.filter(item => item.id !== action.payload)
             }
-        case 'USER_REQUEST':
+        case 'LOGIN_REQUEST':
             return {
                 ...state,
                 user: action.payload
+            }
+        case 'LOGOUT_REQUEST':
+            return {
+                ...state,
+                user: action.payload
+            }
+        case 'REGISTER_REQUEST':
+            return {
+                ...state,
+                user: action.payload
+            }
+        case 'GET_PLAYER':
+            return {
+                ...state,
+                playing: state.trends.find(item => item.id === Number(action.payload)) ||
+                    state.originals.find(item => item.id === Number(action.payload)) ||
+                    []
             }
         default:
             return state;

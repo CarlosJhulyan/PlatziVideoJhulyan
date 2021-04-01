@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/App.scss';
 import { connect } from 'react-redux';
-
+import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
@@ -9,9 +9,11 @@ import CarouselItem from '../components/CarouselItem';
 
 const Home = (props) => {
     const { myList, trends, originals } = props;
+
     return (
     <div>
-        <Search />
+        <Header />
+        <Search isHome/>
 
         <Categories title="Mi lista">
             <Carousel>

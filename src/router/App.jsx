@@ -1,11 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from '../containers/Home';
 import Login from '../containers/Login';
 import Register from '../containers/Register';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
+import Player from '../containers/Player';
 
 const App = () => {
     return (
@@ -15,8 +16,8 @@ const App = () => {
                     <Route exact component={Home} path="/" />
                     <Route exact component={Login} path="/login" />
                     <Route exact component={Register} path="/register" />
+                    <Route exact component={Player} path="/player/:id" />
                     <Route component={NotFound} path="*" />
-                    <Redirect from="*" to="*"/>
                 </Switch>
             </Layout>
         </BrowserRouter>
